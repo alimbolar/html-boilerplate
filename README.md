@@ -11,7 +11,19 @@ for
 
 ## HTML
 
-I will try and document the structure of the HTML from time to time.
+### Responsive Images
+
+**Solution for Art Direction Problem** (Source :
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+)
+
+```
+<picture>
+  <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg">
+  <source media="(min-width: 800px)" srcset="elva-800w.jpg">
+  <img src="elva-800w.jpg" alt="Chris standing up holding his daughter Elva">
+</picture>
+```
 
 ## CSS
 
