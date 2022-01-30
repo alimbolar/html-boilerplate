@@ -6,19 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="/assets/scss/style.css" />
-    <script src="./assets/js/main.js"></script>
+    <script defer src="./assets/js/main.js"></script>
     <title>HTML Boiler Plate</title>
   </head>
   <body>
-    <header>
-      <div id="logo" class="logo"></div>
-      <nav class="nav">
-        <ul>
+    <header class="header">
+      <!-- LOGO -->
+      <figure id="logo" class="logo">
+        <picture>
+          <source
+            media="(min-width: 720px)"
+            srcset="./assets/images/logo-desktop.svg"
+          />
+          <img src="./assets/images/logo-mobile.svg" alt="" srcset="" />
+        </picture>
+      </figure>
+
+      <!-- NAVIGATION -->
+      <nav class="desktop">
+        <ul class="nav__primary">
           <li class="nav__item"><a href="" class="nav__link">Home</a></li>
           <li class="nav__item"><a href="" class="nav__link">About</a></li>
           <li class="nav__item"><a href="" class="nav__link">Contact</a></li>
         </ul>
       </nav>
+      <nav class="mobile hidden">
+        <ul class="nav__primary">
+          <li class="nav__item"><a href="" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- MENU -->
+
+      <button class="menu">
+        <span class="menu__inner"></span>
+      </button>
     </header>
     <aside></aside>
     <main>
@@ -76,7 +100,7 @@
         <article class="slide_item"></article>
       </section>
     </main>
-    <footer>
+    <footer class="footer">
       <nav class="nav">
         <ul>
           <li class="nav__item"><a href="#" class="nav__link">FAQ</a></li>

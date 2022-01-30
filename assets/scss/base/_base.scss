@@ -1,0 +1,41 @@
+:root {
+  // GLOBAL COLOURS
+  --primary-color: hsla(10, 100%, 50%, 1);
+  --secondary-color: hsla(20, 100%, 50%, 1);
+  --accent-color: hsla(30, 100%, 50%, 1);
+
+  // STANDARD COLOURS
+  --white: hsla(1, 100%, 100%, 1);
+  --light-grey: hsla(1, 100%, 0%, 0.2);
+
+  // GLOBAL FONTS
+
+  // GLOBAL MEASURES
+  --font-size: 16px;
+  --header-height: 6rem;
+  --mobile-breakpoint: 720px;
+  --logo-width: calc(var(--header-height) - 1rem);
+  --menu-width: calc((var(--header-height) - 1rem));
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: var(--font-size);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+}
+
+// a {
+//   text-decoration: none;
+// }
