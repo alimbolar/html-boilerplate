@@ -46,27 +46,31 @@
     </header>
     <aside></aside>
     <main>
-      <section id="hero" class="hero">
-        <article class="hero__container">
-          <figure class="hero__figure">
-            <img
-              src="https://unsplash.it/1200/400"
-              alt="image showing something"
-              srcset=""
-            />
-            <figcaption class="hero__caption">
-              This is the hero Image
-            </figcaption>
-          </figure>
+      <section id="hero" class="flex-hero">
+        <article class="hero__content">
+          <h2 class="heading">Some title about the hero</h2>
+          <p>Some information about the hero image</p>
+          <div class="cta"><button>Click to know more</button></div>
         </article>
+        <figure class="hero__figure">
+          <img
+            src="https://unsplash.it/600/400"
+            alt="image showing something"
+            srcset=""
+          />
+          <figcaption class="hero__caption">This is the hero Image</figcaption>
+        </figure>
       </section>
 
       <section id="grid-hero" class="grid-hero">
-        <picture>
-          <img src="https://unsplash.it/1200/800" alt="" srcset="" />
-        </picture>
+        <figure>
+          <picture>
+            <img src="https://unsplash.it/600/400" alt="" srcset="" />
+          </picture>
+          <figcaption>Some text about the image</figcaption>
+        </figure>
         <article>
-          <h2>This is the title</h2>
+          <h2 class="heading">This is the title</h2>
           <p>And this is some explanation</p>
           <button>Click on Button</button>
         </article>
@@ -74,13 +78,15 @@
 
       <section id="flex-hero" class="flex-hero">
         <article>
-          <h2>The is the flex-hero</h2>
+          <h2 class="heading">The is the flex-hero</h2>
           <p>And this is some explanation</p>
-          <input type="button" value="Click on Input" />
+          <button>Click on Button</button>
         </article>
-        <picture
-          ><img src="https://unsplash.it/1200/800" alt="" srcset=""
-        /></picture>
+        <figure>
+          <picture
+            ><img src="https://unsplash.it/600/400" alt="" srcset=""
+          /></picture>
+        </figure>
       </section>
       <section id="cards" class="cards">
         <article class="card">
