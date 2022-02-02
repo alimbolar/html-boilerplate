@@ -1,4 +1,9 @@
 "use strict";
+
+// import * as IntersectionObserver from "./api/intersectionObserver";
+
+// import { headerObserver } from "./api/intersectionObserver";
+
 // MENU
 
 const menu = document.querySelector(".menu");
@@ -58,3 +63,102 @@ const moveToPrev = function (e) {
 next.addEventListener("click", moveToNext);
 
 prev.addEventListener("click", moveToPrev);
+
+//////// // INTERSECTION OBSERVER
+
+// const gridHero = document.querySelector(".grid-hero");
+// const title = document.querySelector(".grid-hero .heading");
+// console.log(title);
+
+// const options = {
+//   root: null,
+//   rootMargin: "0px",
+//   threshold: 1.0,
+// };
+
+// const displayGridHero = function (changes) {
+//   // entries.forEach((entry) => {
+//   //   console.log(entry);
+//   // });
+//   console.log(changes.length);
+//   changes.forEach((change) => {
+//     console.log(change);
+//     if (change.intersectionRatio > 0.1) {
+//       const figure = change.target.querySelector("img");
+//       console.log(figure);
+//       figure.classList.remove("invisible");
+//       figure.classList.add("visible");
+//     }
+//   });
+// };
+
+// const observer = new IntersectionObserver(displayGridHero, options);
+
+// observer.observe(gridHero);
+
+// HEADER OBSERVER
+
+// const header = document.querySelector(".header");
+
+const headerOptions = {
+  root: null,
+  threshold: 0,
+  rootMargin: "0px",
+};
+
+const makeHeaderSticky = function (changes, observer) {
+  const change = changes[0];
+
+  console.log(change);
+  console.log(change.isIntersecting);
+
+  if (!change.isIntersecting) {
+    header.classList.add("stickyHeader");
+  } else {
+    header.classList.remove("stickyHeader");
+  }
+};
+
+const sliderObserver = new IntersectionObserver(
+  makeHeaderSticky,
+  headerOptions
+);
+
+sliderObserver.observe(slider);
+
+// SECTION OBSERVER
+
+const hiddenSections = document.querySelectorAll(
+  "main section:not(:first-child)"
+);
+
+const displaySections = function (changes) {
+  const change = changes[0];
+
+  console.log(change);
+  console.log(change.isIntersecting);
+
+  if (!change.isIntersecting) return;
+
+  // change.target.style.visibility = "visible";
+  change.target.classList.remove("invisible");
+
+  change.target.classList.add("visible");
+
+  sectionObserver.unobserve(change.target);
+};
+
+const sectionObserver = new IntersectionObserver(displaySections, {
+  root: null,
+  threshold: 0.6,
+});
+
+hiddenSections.forEach((section) => {
+  console.log(section);
+  // section.style.visibility = "hidden";
+  section.classList.add("invisible");
+
+  sectionObserver.observe(section);
+});
+
+console.log(hiddenSections);

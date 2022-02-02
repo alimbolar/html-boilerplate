@@ -1,8 +1,8 @@
 header {
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
+  // position: fixed;
+  // z-index: 100;
+  // top: 0;
+  // left: 0;
   width: 100%;
   height: var(--header-height);
   background-color: var(--white);
@@ -12,6 +12,16 @@ header {
   // padding-top: 2rem;
   border-bottom: 1px solid var(--light-grey);
   padding: 1rem 2.5rem 1rem 1rem;
+
+  &.stickyHeader {
+    position: fixed;
+    z-index: 100;
+    top: -100px;
+    left: 0;
+    transform: translateY(100px);
+    transition: transform 0.5s;
+    // background-color: pink;
+  }
 
   nav {
     display: block;
