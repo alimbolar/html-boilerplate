@@ -126,39 +126,39 @@ const sliderObserver = new IntersectionObserver(
 
 sliderObserver.observe(slider);
 
-// SECTION OBSERVER
+// // SECTION OBSERVER
 
-const hiddenSections = document.querySelectorAll(
-  "main section:not(:first-child)"
-);
+// const hiddenSections = document.querySelectorAll(
+//   "main section:not(:first-child)"
+// );
 
-const displaySections = function (changes) {
-  const change = changes[0];
+// const displaySections = function (changes) {
+//   const change = changes[0];
 
-  console.log(change);
-  console.log(change.isIntersecting);
+//   console.log(change);
+//   console.log(change.isIntersecting);
 
-  if (!change.isIntersecting) return;
+//   if (!change.isIntersecting) return;
 
-  // change.target.style.visibility = "visible";
-  change.target.classList.remove("invisible");
+//   // change.target.style.visibility = "visible";
+//   change.target.classList.remove("invisible");
 
-  change.target.classList.add("visible");
+//   change.target.classList.add("visible");
 
-  sectionObserver.unobserve(change.target);
-};
+//   sectionObserver.unobserve(change.target);
+// };
 
-const sectionObserver = new IntersectionObserver(displaySections, {
-  root: null,
-  threshold: 0.6,
-});
+// const sectionObserver = new IntersectionObserver(displaySections, {
+//   root: null,
+//   threshold: 0.6,
+// });
 
-hiddenSections.forEach((section) => {
-  console.log(section);
-  // section.style.visibility = "hidden";
-  section.classList.add("invisible");
+// hiddenSections.forEach((section) => {
+//   console.log(section);
+//   // section.style.visibility = "hidden";
+//   section.classList.add("invisible");
 
-  sectionObserver.observe(section);
-});
+//   sectionObserver.observe(section);
+// });
 
-console.log(hiddenSections);
+// console.log(hiddenSections);
