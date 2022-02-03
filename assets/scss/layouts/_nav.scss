@@ -1,20 +1,20 @@
 nav {
-  .nav__primary {
+  .nav__primary,
+  .nav__secondary {
     width: 100%;
     height: 100%;
     gap: 3em;
     background-color: var(--white);
     display: flex;
     align-items: center;
+  }
+  .nav__item {
+    border-bottom: 1px solid var(--accent-color);
+  }
 
-    .nav__item {
-      border-bottom: 1px solid var(--accent-color);
-    }
-
-    .nav__link {
-      text-decoration: none;
-      text-transform: uppercase;
-    }
+  .nav__link {
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
   &.desktop .nav__primary {

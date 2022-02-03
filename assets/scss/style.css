@@ -187,6 +187,12 @@ button {
   padding: 0.5em;
 }
 
+input,
+textarea {
+  outline: none;
+  resize: none;
+}
+
 .hidden {
   display: none;
 }
@@ -294,7 +300,8 @@ header .logo {
   }
 }
 
-nav .nav__primary {
+nav .nav__primary,
+nav .nav__secondary {
   width: 100%;
   height: 100%;
   gap: 3em;
@@ -307,11 +314,11 @@ nav .nav__primary {
           align-items: center;
 }
 
-nav .nav__primary .nav__item {
+nav .nav__item {
   border-bottom: 1px solid var(--accent-color);
 }
 
-nav .nav__primary .nav__link {
+nav .nav__link {
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -410,6 +417,26 @@ main .grid-hero > * {
   transition: all 2s;
 }
 
+footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: fr 1fr;
+      grid-template-rows: fr 1fr;
+  padding: 1rem;
+  gap: 2em;
+  background: var(--white);
+}
+
+footer > * {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 4em;
+}
+
 .menu {
   width: 4rem;
   height: 4rem;
@@ -477,6 +504,77 @@ main .grid-hero > * {
   .menu {
     display: none;
   }
+}
+
+button.cta {
+  border: none;
+  text-transform: uppercase;
+  background: pink;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+a button.cta:hover {
+  background: var(--primary-color);
+  -webkit-transform: scale(1.2) translate(0, 0.5rem);
+          transform: scale(1.2) translate(0, 0.5rem);
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 1em;
+  border: 1px solid var(--light-grey);
+  padding: 2em;
+}
+
+.form .form-group {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+.form .form-group:last-child:first-child {
+  border: 1px solid red;
+}
+
+.form .form-group label {
+  text-transform: uppercase;
+}
+
+.form .form-group input,
+.form .form-group textarea {
+  border: none;
+  border-bottom: 1px solid var(--light-grey);
+  height: 2rem;
+  width: 100%;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+}
+
+.form .form-group input:focus,
+.form .form-group textarea:focus {
+  border: none;
+}
+
+.form .form-group textarea:focus {
+  height: 10rem;
+}
+
+.form .form-group:focus-within:not(:last-child) {
+  color: black;
+}
+
+.form:focus-within {
+  color: grey;
 }
 
 .slider {
@@ -564,5 +662,16 @@ main .grid-hero > * {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.social {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

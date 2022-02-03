@@ -54,3 +54,9 @@ button {
   width: max-content;
   padding: 0.5em;
 }
+
+input,
+textarea {
+  outline: none;
+  resize: none;
+}
