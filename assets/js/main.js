@@ -9,6 +9,7 @@
 const menu = document.querySelector(".menu");
 const header = document.querySelector("header");
 const mobileNav = document.querySelector("nav.mobile");
+const cards = document.querySelector(".cards");
 
 menu.addEventListener("click", function (e) {
   // For Menu Animation
@@ -24,16 +25,16 @@ menu.addEventListener("click", function (e) {
 const slider = document.querySelector(".slider");
 // console.log(Array.from(slider.children)[0].dataset.test);
 
-const slides = slider.querySelectorAll(".slide");
+const slides = slider?.querySelectorAll(".slide");
 
-slides.forEach((slide, index) => {
+slides?.forEach((slide, index) => {
   // console.log(slide, index);
   slide.style.transform = `translateX(${index * 100}%)`;
   // console.log(slide);
 });
 
 let currSlide = 0;
-const maxSlide = slides.length - 1;
+const maxSlide = slides?.length - 1;
 
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
@@ -60,9 +61,9 @@ const moveToPrev = function (e) {
   });
 };
 
-next.addEventListener("click", moveToNext);
+next?.addEventListener("click", moveToNext);
 
-prev.addEventListener("click", moveToPrev);
+prev?.addEventListener("click", moveToPrev);
 
 //////// // INTERSECTION OBSERVER
 
@@ -124,7 +125,7 @@ const sliderObserver = new IntersectionObserver(
   headerOptions
 );
 
-sliderObserver.observe(slider);
+if (slider) sliderObserver.observe(slider);
 
 // // SECTION OBSERVER
 
@@ -162,3 +163,36 @@ sliderObserver.observe(slider);
 // });
 
 // console.log(hiddenSections);
+
+const opticianProducts = fetch(
+  "http://localhost:8010/proxy/wp-json/wc/store/products"
+)
+  .then((response) => response.json())
+  .then((products) => {
+    const template = document.querySelector("template");
+    console.log(products);
+    products.forEach((product, i) => {
+      const img = product.images[0].src;
+
+      const newCard = template.content.cloneNode(true).children[0];
+
+      let originalImage = newCard.querySelector("img");
+      let productName = newCard.querySelector(".card__product-name");
+      let brand = newCard.querySelector(".card__brand");
+      let description = newCard.querySelector(".card__description");
+      let price = newCard.querySelector(".card__price");
+
+      originalImage.src = product.images[3].src;
+      productName.textContent = product.name;
+      brand.textContent = "R Kumar";
+      description.innerHTML = product.description;
+      price.textContent = `${product.prices.currency_symbol} ${product.prices.price}`;
+      // console.log(originalImage);
+      console.log(newCard);
+
+      // console.log(product.images[0].src);
+      cards.appendChild(newCard);
+    });
+  });
+
+// console.log(products);

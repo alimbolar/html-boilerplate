@@ -417,6 +417,18 @@ main .grid-hero > * {
   transition: all 2s;
 }
 
+main .contact {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  background-color: var(--white);
+}
+
+main .contact > * {
+  padding: 1.5em;
+}
+
 footer {
   display: -ms-grid;
   display: grid;
@@ -427,6 +439,7 @@ footer {
   padding: 1rem;
   gap: 2em;
   background: var(--white);
+  border-top: 1px solid var(--light-grey);
 }
 
 footer > * {

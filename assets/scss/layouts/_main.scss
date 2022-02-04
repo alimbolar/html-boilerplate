@@ -37,4 +37,13 @@ main {
       transition: all 2s;
     }
   }
+
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--white);
+    > * {
+      padding: 1.5em;
+    }
+  }
 }

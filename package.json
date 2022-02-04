@@ -1,0 +1,23 @@
+{
+  "name": "html-boilerplate",
+  "version": "1.0.0",
+  "description": "This will be my default html boiler plate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alimbolar/html-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alimbolar/html-boilerplate/issues"
+  },
+  "homepage": "https://github.com/alimbolar/html-boilerplate#readme",
+  "dependencies": {
+    "local-cors-proxy": "^1.1.0"
+  }
+}
